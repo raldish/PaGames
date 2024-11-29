@@ -85,7 +85,7 @@
           margin:0;
         }
 
-                .loader {
+        .loader {
           position: fixed;
           top: 0;
           left: 0;
@@ -166,8 +166,39 @@
   </head>
   <body style="background: linear-gradient(to right, yellow, orange, red);">
     <!-- Start your project here-->
+    <div style="display: flex; justify-content: left; margin-top: -20px;">
+      <a href="index.html">
+        <div class="flip-box">
+          <br>
+          <h4 class="mb-3 text-black large-text" style="display: flex; justify-content: center;"><</h4>
+        </div>                
+      </a>
+    </div>
+    <script>
+      // Add an event listener to the link
+      document.querySelector('a[href="index.html"]').addEventListener('click', function(event) {
+        // Prevent the default link behavior
+        event.preventDefault();
+        
+        // Display the loader
+        var loader = document.createElement('div');
+        loader.className = 'loader';
+        loader.innerHTML = '<div><p>l</p><p>o</p><p>a</p><p>d</p><p>i</p><p>n</p><p>g</p></div>';
+        document.body.appendChild(loader);
+        
+        // Set a timeout to delay the redirect
+        setTimeout(function() {
+          // Remove the loader
+          loader.remove();
+          
+          // Redirect to the link's href
+          window.location.href = 'index.html';
+        }, 1000); // 1000ms = 1 seconds
+      });
+    </script>
     <div class="container">
-      <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+      <div class="d-flex justify-content-center align-items-center" style="height: 70vh;">
+        
         <div class="text-center">
           <h5 class="mb-3 text-white large-text">Pick a Category</h5>
           <div class="flip-box-container">
@@ -196,7 +227,7 @@
                   
                   // Redirect to the link's href
                   window.location.href = 'category1.html';
-                }, 2000); // 2000ms = 2 seconds
+                }, 1000); // 1000ms = 1 seconds
               });
             </script>
             <a href="category2.html">
@@ -311,9 +342,39 @@
                 }, 2000); // 2000ms = 2 seconds
               });
             </script>
-          </div>
+            </div>
+            <!-- <br>
+            <div style="display: flex; justify-content: left;">
+              <a href="index.html">
+                <div class="flip-box">
+                  <br>
+                  <h4 class="mb-3 text-black large-text"><</h4>
+                </div>                
+              </a>
+            </div>
+            <script>
+              // Add an event listener to the link
+              document.querySelector('a[href="index.html"]').addEventListener('click', function(event) {
+                // Prevent the default link behavior
+                event.preventDefault();
+                
+                // Display the loader
+                var loader = document.createElement('div');
+                loader.className = 'loader';
+                loader.innerHTML = '<div><p>l</p><p>o</p><p>a</p><p>d</p><p>i</p><p>n</p><p>g</p></div>';
+                document.body.appendChild(loader);
+                
+                // Set a timeout to delay the redirect
+                setTimeout(function() {
+                  // Remove the loader
+                  loader.remove();
+                  
+                  // Redirect to the link's href
+                  window.location.href = 'index.html';
+                }, 1000); // 2000ms = 1 seconds
+              });
+            </script> -->
         </div>
-      </div>
     </div>
     <!-- End your project here-->
 
