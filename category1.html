@@ -248,7 +248,7 @@
       });
     </script>
     <div class="container">
-      <div class="d-flex justify-content-center align-items-center" style="height: 80vh;">
+      <div class="d-flex justify-content-center align-items-center" style="height: 73vh;">
         <div class="text-center">
           <h5 class="mb-3 text-white large-text">Category: Tao</h5>
           <p class="mb-3 text-white small-text">1. Mga Lugar sa Pilipinas na may salitang inuulit.</p>
@@ -327,6 +327,38 @@
         </div>
       </div>
     </div>
+    <!-- More Questions Button-->
+    <div style="display: flex; justify-content: right;">
+      <a href="category1_1.html">
+        <div class="flip-box">
+          <br>
+          <h4 class="mb-3 text-black large-text" style="display: flex; justify-content: center;">More Questions</h4>
+        </div>                
+      </a>
+    </div>
+    <script>
+      // Add an event listener to the link
+      document.querySelector('a[href="category1_1.html"]').addEventListener('click', function(event) {
+        // Prevent the default link behavior
+        event.preventDefault();
+        
+        // Display the loader
+        var loader = document.createElement('div');
+        loader.className = 'loader';
+        loader.innerHTML = '<div><p>l</p><p>o</p><p>a</p><p>d</p><p>i</p><p>n</p><p>g</p></div>';
+        document.body.appendChild(loader);
+        
+        // Set a timeout to delay the redirect
+        setTimeout(function() {
+          // Remove the loader
+          loader.remove();
+          
+          // Redirect to the link's href
+          window.location.href = 'category1_1.html';
+        }, 1000); // 1000ms = 1 seconds
+      });
+    </script>
+    <!-- End More Questions Button-->
     <!-- End your project here-->
 
     <!-- MDB -->
